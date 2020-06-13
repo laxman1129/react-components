@@ -1,8 +1,63 @@
 # Components
 
-## Class based components
+A component is an independent, reusable code block, which divides the UI into smaller pieces.  
+We don’t really want to have thousands of lines of code together in one single file. Maintenance of the code gets more and more complex as the project gets bigger.
 
-## Functional components
+Components may accept props and return React elements.
+
+### What is props
+
+React allows us to pass information to a Component using something called props (stands for properties). Props are basically kind of global variable or object, passed from parent component to child components.
+
+### What is state
+
+The state in React component is an observable object which controls the behaviour of the component.  
+In other words, the State of a component is an object that holds some information that may change over the lifetime of the component.
+
+## Class based components (Statefull)
+
+Class Components are ES6 classes. They can include constructor, lifecycle methods, render() function and state(data) management.  
+These are called Stateful components because state is part of the class React.Component which is extended by the component.
+
+```javascript
+import React, { Component } from "react";
+
+class Person extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      myState: true;
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello Person</h1>
+      </div>
+    );
+  }
+}
+
+export default Person;
+```
+
+## Functional components (Stateless)
+
+Functional components are javascript or ES6 functions.  
+They are called stateless components as they do not inherit state by extending any class.
+
+***Functional component can  __`useState`__ using React hooks***
+
+```javascript
+const Person = (props) => {
+  return (
+    <div>
+      <h1>Hello Person</h1>
+    </div>
+  );
+};
+```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
